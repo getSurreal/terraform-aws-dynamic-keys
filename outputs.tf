@@ -2,19 +2,10 @@ output "key_name" {
   value = aws_key_pair.generated.key_name
 }
 
-output "public_key_openssh" {
-  value = tls_private_key.generated.public_key_openssh
+output "ssm_private_name" {
+  value = module.private_key.name
 }
 
-output "private_key_pem" {
-  value = tls_private_key.generated.private_key_pem
+output "ssm_public_name" {
+  value = module.public_key.name
 }
-
-output "public_key_filepath" {
-  value = local.public_key_filename
-}
-
-output "private_key_filepath" {
-  value = local.private_key_filename
-}
-
